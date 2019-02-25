@@ -19,3 +19,7 @@ Note: The file format can be either fastq, bam or sam
 This step will give a general view on number and length of reads, if there are any contaminating sequences in the sample or low-quality sequences. This step can be done for any of the types of samples before running their respective pipelines.
 
 ## D-seek
+## R-seek
+## ChIP-seek
+
+
