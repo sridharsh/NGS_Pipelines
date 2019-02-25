@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
-ref_genome = file("/sc/orga/projects/PBG/REFERENCES/GRCh38/BWAindex/GRCh38.primary_assembly.genome.fa")
-params.reads = "/sc/orga/projects/PBG/hara/hara-tests/dnaseq/4680_6859_ACAGTG_L002_R{1,2}_002.HB676ADXX.fastq.gz"
+ref_genome = file("GRCh38.primary_assembly.genome.fa")
+params.reads = "R{1,2}.fastq.gz"
 read_files = file(params.reads)
 
 
