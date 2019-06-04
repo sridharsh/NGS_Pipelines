@@ -407,4 +407,3 @@ process peak_calling {
     macs2 callpeak -t ${bam} -f BAM -g hs -n ${sample_name} -B -q 0.01
     """
 }
-
