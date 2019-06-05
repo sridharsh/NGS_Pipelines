@@ -51,7 +51,7 @@ D_express <- function(in_matrix, condition, p_val="."){
   }
   
   #write.csv(as.data.frame(resOrdered),
-  #          file="A_vs_B.csv")                                        # uncomment to save the DEseq results as a csv file
+  #          file="A_vs_B.csv")                                          # uncomment to save the DEseq results as a csv file
   
   dds
 }
@@ -88,7 +88,7 @@ heat_mapping <- function(dds, cutoff=0){
 ### MAIN ###
 
 file_format = "*.txt"                                                  # change for different formats
-run_path = "/Users/sridhs01/Desktop/Waxman/RNA_counts/count.geneID"    # change for different working directories
+run_path = "/Users/XYZ/Desktop/RNA_counts"                             # change for different working directories
 
 datain <- fetch_combine(run_path, file_format)
 colnames(datain)                                                       # prints only the first 10 lines, change if need to view more
