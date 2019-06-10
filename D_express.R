@@ -1,6 +1,6 @@
 ### COMBINING FEATURE COUNTS INTO ONE SINGLE TABLE ###
 
-fetch_combine <- function(path, pattern){
+fetch_combine <- function(path, pattern, skipit =0){
   setwd(path)
   files <- list.files(path, pattern)
   nfiles <- length(files)
@@ -12,7 +12,7 @@ fetch_combine <- function(path, pattern){
   for(i in 1:nfiles){
     file_data <- read.table(files[i], 
                             sep = "\t", 
-                            header = TRUE)
+                            header = TRUE, skip = skipit)
     
     data_counts <-(cbind(data_counts,
                          file_data[,ncol(file_data)]))
@@ -90,7 +90,10 @@ heat_mapping <- function(dds, cutoff=0){
 file_format = "*.txt"                                                  # change for different formats
 run_path = "/Users/XYZ/Desktop/RNA_counts"                             # change for different working directories
 
-datain <- fetch_combine(run_path, file_format)
+datain <- fetch_combine(run_path, file_format, skipit)                 # run_path = working directory / files where the counts are present
+                                                                       # file_format = .txt, .csv, .tsv
+                                                                       # skipit = number of lines before header to skip
+
 colnames(datain)                                                       # prints only the first 10 lines, change if need to view more
 
 condition <- factor(c("PCMV", "PCMV", "PCMV", "PF1", "PF1", "PF1"))    # consider the colnames printed in the above statement before setting an order to the conditions
